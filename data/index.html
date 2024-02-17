@@ -1,0 +1,553 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="/static/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">CanBridge</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/update">Update</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container mt-4">
+
+    <div class="alert alert-warning" style="width: 100%;" role="alert">
+      <p class="text-center">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i><strong>Disclaimer!!</strong> please note
+        we do not carry responsibility for usage of this device, by using this device you accept all responsibility for
+        the outcomes and failures due to incorrect configuration!!!!! PROCEED AT YOUR OWN RISK!
+      </p>
+    </div>
+    <form method="POST" id="form" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 pb-4">
+          <fieldset class="form-group">
+            <legend>[1]Vehicle Selection</legend>
+            <small class="text-muted">Please see <a href="https://github.com/dalathegreat/BatteryUpgrade-UserManual"
+                class="link-info">this link</a> for more info.</small>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Vehicle" id="Vehicle1" value="LEAF" required
+                  checked="" />
+                Nissan LEAF 2010-2019
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Vehicle" id="Vehicle2" value="ENV200" required />
+                Nissan ENV200
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Vehicle" id="Vehicle3" value="ZE0" required />
+                ZE0 (2011-2012)
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Vehicle" id="Vehicle4" value="AZE0" required />
+                AZE0 (2013-2017)
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Vehicle" id="Vehicle5" value="ZE1" required />
+                ZE1 (2018-2022)
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 pb-4">
+          <fieldset class="form-group">
+            <legend>[2]Inverter Upgrade 110Kw/160Kw</legend>
+            <small class="text-muted">Please see <a href="https://github.com/dalathegreat/Nissan-LEAF-Inverter-Upgrade"
+                class="link-info">this link</a> for more info.</small>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Inverter" id="Inverter1" value="110" checked=""
+                  required />
+                EM57 Motor with 110Kw inverter
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Inverter" id="Inverter2" value="160" required />
+                EM57 Motor with 160Kw Inverter
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Inverter" id="Inverter3" value="0" required />
+                Disabled
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 pb-4">
+          <fieldset class="form-group">
+            <legend>[3]Battery Selection</legend>
+            <small class="text-muted">Please see <a href="https://github.com/dalathegreat/BatteryUpgrade-UserManual"
+                class="link-info">this link</a> for more info.</small>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Battery" id="Battery1" value="24" checked=""
+                  required />
+                24Kwh
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Battery" id="Battery2" value="30" required />
+                30Kw
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Battery" id="Battery3" value="40" required />
+                40Kwh
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Battery" id="Battery4" value="62" required />
+                62Kwh
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Battery" id="Battery5" value="-1" required />
+                BruteForce 30KWh/24KWH LBC (use at your own risk Do not
+                delete)
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 pb-4">
+          <h3>
+            Leaf Enhancer configuration
+          </h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 pb-4">
+          <fieldset id="BatterySaver" class="form-group">
+            <legend>[4]BatterySaver</legend>
+            <small class="text-muted">Please see <a href="https://github.com/dalathegreat/BatteryUpgrade-UserManual"
+                class="link-info">this link</a> for more info.</small>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="BatterySaver" id="BatterySaver1" value="50"
+                  checked="" required />
+                50%
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="BatterySaver" id="BatterySaver2" value="60"
+                  required />
+                60%
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="BatterySaver" id="BatterySaver3" value="80"
+                  required />
+                80%
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="BatterySaver" id="BatterySaver4" value="0"
+                  required />
+                Disabled
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 pb-4">
+          <fieldset id="Glide" class="form-group">
+            <legend>[5]Glide in Drive</legend>
+            <small class="text-muted">Please see <a href="https://github.com/dalathegreat/BatteryUpgrade-UserManual"
+                class="link-info">this link</a> for more info.</small>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Glide" id="Glide1" value="1" checked="" required />
+                Enabled
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Glide" id="Glide2" value="0" required />
+                Disabled
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 pb-4">
+          <fieldset id="Capacity" class="form-group">
+            <legend>[6]Capacity Boost</legend>
+            <small class="text-muted">Please see <a href="https://github.com/dalathegreat/BatteryUpgrade-UserManual"
+                class="link-info">this link</a> for more info.</small>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Capacity" id="Capacity1" value="1" checked=""
+                  required />
+                Enabled
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="Capacity" id="Capacity2" value="0" required />
+                Disabled
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 pb-4">
+          <fieldset id="CurrentControl" class="form-group">
+            <legend>[7]CurrentControl</legend>
+            <small class="text-muted">Please see <a href="https://github.com/dalathegreat/BatteryUpgrade-UserManual"
+                class="link-info">this link</a> for more info.</small>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="CurrentControl" id="CurrentControl1" value="1"
+                  checked="" required />
+                1.0 KW
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="CurrentControl" id="CurrentControl2" value="2"
+                  required />
+                2.0 kW
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="CurrentControl" id="CurrentControl3" value="3"
+                  required />
+                3.0 kW
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="CurrentControl" id="CurrentControl4" value="4"
+                  required />
+                4.0 kW
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="CurrentControl" id="CurrentControl5" value="6"
+                  required />
+                6.0 kW
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="CurrentControl" id="CurrentControl6" value="-1"
+                  required />
+                Unrestricted KW
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <hr>
+      <div class="row pb-4 float-right">
+        <button type="submit" class="btn btn-dark">Submit</button>
+      </div>
+    </form>
+  </div>
+  <script src="/static/jquery.min.js"
+    integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/static/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="/static/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>
+      $("form").submit(function (event) {
+        event.preventDefault();
+
+   // var data = {}
+    //var Form = this;
+
+    //Gathering the Data
+    //and removing undefined keys(buttons)
+    
+       // $.each(this.elements, function(i, v){
+       //   var input = $(v);
+        //  if(input.is(':checked')){data[input.attr("name")] = input.val();}
+     // delete data["undefined"];
+  //});
+
+  const pp = new FormData(event.target);
+  var fdata=JSON.stringify(Object.fromEntries(pp.entries()), null, 2);
+
+        //var form = $("form")[0];
+        //var fdata=JSON.stringify(data)
+        console.log(fdata);
+        $.ajax({
+          type: "POST",
+          url: "/settings",
+          dataType : 'html',
+          data: fdata,
+          success: function (msg) {
+            alert(msg);
+          },
+          error: function (jqXHR, textStatus, errorThrown) {
+            if (jqXHR.status == 500) {
+              alert('Internal error: ' + jqXHR.responseText);
+            } else {
+              alert('Unexpected error.');
+            }
+          }
+        }).done(function (data) {
+          console.log(data);
+        });
+
+      });
+  </script>
+<script>
+	  var gateway = `ws://${window.location.hostname}/ws`;
+	  var websocket;
+	  window.addEventListener('load', onLoad);
+	  
+	  function initWebSocket() {
+		console.log('Trying to open a WebSocket connection...');
+		websocket = new WebSocket(gateway);
+		websocket.onopen    = onOpen;
+		websocket.onclose   = onClose;
+		websocket.onmessage = onMessage; // <-- add this line
+	  }
+	  
+	  function onOpen(event) {
+		console.log('Connection opened');
+	  }
+	  
+	  function onClose(event) {
+		console.log('Connection closed');
+		setTimeout(initWebSocket, 2000);
+	  }
+	  
+	  function onMessage(event) {
+		
+		//Vehicle Selections
+		if (event.data == "Vehicle1"){
+		  document.getElementById("Vehicle1").checked = true;
+		  document.getElementById("Vehicle2").checked = false;
+		  document.getElementById("Vehicle3").checked = false;
+          document.getElementById("Vehicle4").checked = false;
+		  document.getElementById("Vehicle5").checked = false;
+		}
+		else if (event.data == "Vehicle2"){
+		  document.getElementById("Vehicle1").checked = false;
+		  document.getElementById("Vehicle2").checked = true;
+		  document.getElementById("Vehicle3").checked = false;
+          document.getElementById("Vehicle4").checked = false;
+		  document.getElementById("Vehicle5").checked = false;
+		}
+		else if (event.data == "Vehicle3"){
+		  document.getElementById("Vehicle1").checked = false;
+		  document.getElementById("Vehicle2").checked = false;
+		  document.getElementById("Vehicle3").checked = true;
+          document.getElementById("Vehicle4").checked = false;
+		  document.getElementById("Vehicle5").checked = false;
+		}
+		else if (event.data == "Vehicle4"){
+		  document.getElementById("Vehicle1").checked = false;
+		  document.getElementById("Vehicle2").checked = false;
+		  document.getElementById("Vehicle3").checked = false;
+          document.getElementById("Vehicle4").checked = true;
+		  document.getElementById("Vehicle5").checked = false;
+		}
+		else if (event.data == "Vehicle5"){
+		  document.getElementById("Vehicle1").checked = false;
+		  document.getElementById("Vehicle2").checked = false;
+		  document.getElementById("Vehicle3").checked = false;
+          document.getElementById("Vehicle4").checked = false;
+		  document.getElementById("Vehicle5").checked = true;
+		}
+		//Inverter Configuration
+		else if (event.data == "Inverter1"){
+		  document.getElementById("Inverter1").checked = true;
+		  document.getElementById("Inverter2").checked = false;
+		  document.getElementById("Inverter3").checked = false;
+		}
+		else if (event.data == "Inverter2"){
+		  document.getElementById("Inverter1").checked = false;
+		  document.getElementById("Inverter2").checked = true;
+		  document.getElementById("Inverter3").checked = false;
+		}
+		else if (event.data == "Inverter3"){
+		  document.getElementById("Inverter1").checked = false;
+		  document.getElementById("Inverter2").checked = false;
+		  document.getElementById("Inverter3").checked = true;
+		}
+		//Battery Configuration
+		else if (event.data == "Battery1"){
+		  document.getElementById("Battery1").checked = true;
+		  document.getElementById("Battery2").checked = false;
+		  document.getElementById("Battery3").checked = false;
+		  document.getElementById("Battery4").checked = false;
+		  document.getElementById("Battery5").checked = false;
+		}
+		else if (event.data == "Battery2"){
+		  document.getElementById("Battery1").checked = false;
+		  document.getElementById("Battery2").checked = true;
+		  document.getElementById("Battery3").checked = false;
+		  document.getElementById("Battery4").checked = false;
+		  document.getElementById("Battery5").checked = false;
+		}
+		else if (event.data == "Battery3"){
+		  document.getElementById("Battery1").checked = false;
+		  document.getElementById("Battery2").checked = false;
+		  document.getElementById("Battery3").checked = true;
+		  document.getElementById("Battery4").checked = false;
+		  document.getElementById("Battery5").checked = false;
+		}		
+		else if (event.data == "Battery4"){
+		  document.getElementById("Battery1").checked = false;
+		  document.getElementById("Battery2").checked = false;
+		  document.getElementById("Battery3").checked = false;
+		  document.getElementById("Battery4").checked = true;
+		  document.getElementById("Battery5").checked = false;
+		}
+		else if (event.data == "Battery5"){
+		  document.getElementById("Battery1").checked = false;
+		  document.getElementById("Battery2").checked = false;
+		  document.getElementById("Battery3").checked = false;
+		  document.getElementById("Battery4").checked = false;
+		  document.getElementById("Battery5").checked = true;
+		}
+		//Battery Saver Configurations
+		else if (event.data == "BatterySaver1"){
+		  document.getElementById("BatterySaver1").checked = true;
+		  document.getElementById("BatterySaver2").checked = false;
+		  document.getElementById("BatterySaver3").checked = false;
+		  document.getElementById("BatterySaver4").checked = false;		  
+		}
+		else if (event.data == "BatterySaver2"){
+		  document.getElementById("BatterySaver1").checked = false;
+		  document.getElementById("BatterySaver2").checked = true;
+		  document.getElementById("BatterySaver3").checked = false;
+		  document.getElementById("BatterySaver4").checked = false;		  
+		}
+		else if (event.data == "BatterySaver3"){
+		  document.getElementById("BatterySaver1").checked = false;
+		  document.getElementById("BatterySaver2").checked = false;
+		  document.getElementById("BatterySaver3").checked = true;
+		  document.getElementById("BatterySaver4").checked = false;		  
+		}
+		else if (event.data == "BatterySaver4"){
+		  document.getElementById("BatterySaver1").checked = false;
+		  document.getElementById("BatterySaver2").checked = false;
+		  document.getElementById("BatterySaver3").checked = false;
+		  document.getElementById("BatterySaver4").checked = true;		  
+		}
+		//Glide Configuration
+		else if (event.data == "Glide1"){
+		  document.getElementById("Glide1").checked = true;
+		  document.getElementById("Glide2").checked = false;
+		}
+		else if (event.data == "Glide2"){
+		  document.getElementById("Glide1").checked = false;
+		  document.getElementById("Glide2").checked = true;
+		}
+		//Capacity Configuration
+		else if (event.data == "Capacity1"){
+		  document.getElementById("Capacity1").checked = true;
+		  document.getElementById("Capacity2").checked = false;
+		}
+		else if (event.data == "Capacity2"){		  
+		  document.getElementById("Capacity1").checked = false;
+		  document.getElementById("Capacity2").checked = true;
+		}
+		//Current Control Configuration
+		else if (event.data == "CurrentControl1"){		  
+		  document.getElementById("CurrentControl1").checked = true;
+		  document.getElementById("CurrentControl2").checked = false;
+		  document.getElementById("CurrentControl3").checked = false;
+		  document.getElementById("CurrentControl4").checked = false;
+		  document.getElementById("CurrentControl5").checked = false;
+		  document.getElementById("CurrentControl6").checked = false;
+		}
+		else if (event.data == "CurrentControl2"){		  
+		  document.getElementById("CurrentControl1").checked = false;
+		  document.getElementById("CurrentControl2").checked = true;
+		  document.getElementById("CurrentControl3").checked = false;
+		  document.getElementById("CurrentControl4").checked = false;
+		  document.getElementById("CurrentControl5").checked = false;
+		  document.getElementById("CurrentControl6").checked = false;
+		}
+		else if (event.data == "CurrentControl3"){		  
+		  document.getElementById("CurrentControl1").checked = false;
+		  document.getElementById("CurrentControl2").checked = false;
+		  document.getElementById("CurrentControl3").checked = true;
+		  document.getElementById("CurrentControl4").checked = false;
+		  document.getElementById("CurrentControl5").checked = false;
+		  document.getElementById("CurrentControl6").checked = false;
+		}
+		else if (event.data == "CurrentControl4"){		  
+		  document.getElementById("CurrentControl1").checked = false;
+		  document.getElementById("CurrentControl2").checked = false;
+		  document.getElementById("CurrentControl3").checked = false;
+		  document.getElementById("CurrentControl4").checked = true;
+		  document.getElementById("CurrentControl5").checked = false;
+		  document.getElementById("CurrentControl6").checked = false;
+		}
+		else if (event.data == "CurrentControl5"){		  
+		  document.getElementById("CurrentControl1").checked = false;
+		  document.getElementById("CurrentControl2").checked = false;
+		  document.getElementById("CurrentControl3").checked = false;
+		  document.getElementById("CurrentControl4").checked = false;
+		  document.getElementById("CurrentControl5").checked = true;
+		  document.getElementById("CurrentControl6").checked = false;
+		}
+		else if (event.data == "CurrentControl6"){		  
+		  document.getElementById("CurrentControl1").checked = false;
+		  document.getElementById("CurrentControl2").checked = false;
+		  document.getElementById("CurrentControl3").checked = false;
+		  document.getElementById("CurrentControl4").checked = false;
+		  document.getElementById("CurrentControl5").checked = false;
+		  document.getElementById("CurrentControl6").checked = true;
+		}
+		else{
+		  //No action
+		}		
+	  }
+	  
+	  function onLoad(event) {
+		initWebSocket();		
+	  }	  
+  </script>
+</body>
+
+</html>
